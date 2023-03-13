@@ -7,3 +7,5 @@ Projede olacak özellikler:
 • Birden fazla konu türü olacak ve her tür için farklı listeleme seçenekleri olacak
 • Admin panelinden, admin olan üyeler tüm makaleleri, üyelikleri düzenleyebilecek
 • Kullanıcılar makalelerini kendi profil sayfalarından düzenleyebilecek
+
+<- DAHA FAZLA ÖZELLİK EKLENEBİLİR ŞİMDİLİK AKLIMDA OLANLAR BUNLAR ->
