@@ -4,6 +4,8 @@ Projemi ilerlettikçe güncellemeleri bu repository içinde paylaşacağım.
 Projede olacak özellikler:
 • Birden çok kullanıcı farklı konular üzerinden kendi makalelerini yayınlayabilecek
 • Bu kullanıcılar kendi aralarında canlı sohbet edebilecek
+• Farklı dil destekleri olacak (ör: Tr - Eng - Fr)
+• Karanlık mod, açık mod olacak (CSS:root)
 • Birden fazla konu türü olacak ve her tür için farklı listeleme seçenekleri olacak
 • Admin panelinden, admin olan üyeler tüm makaleleri, üyelikleri düzenleyebilecek
 • Kullanıcılar makalelerini kendi profil sayfalarından düzenleyebilecek
