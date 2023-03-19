@@ -26,6 +26,8 @@ NOT: PHP kodları henüz yazılmadı, yalnızca front-end tasarımı.
 
 NOT-2: Görsellerin alındığı sayfalar; Freepik, Unsplash, Pexels  Pixabay, StockSnap, Nappy, StockSnap .io, Reshot, Landing Stock, Photo Creator, Gratisography
 
+NOT-3: Hakkında, İletişim, Servisler sayfalarının tasarımı en sona bırakılacağı için şimdilik boş sayfa olarak yalnızca başlıkları konuldu.
+
 
 (Açık Tema)
 ![Açık Tema](https://github.com/efesipahi6/Mezuniyet-Projesi/blob/main/Projeden%20kareler/ayd%C4%B1nl%C4%B1k%20mod.png)
