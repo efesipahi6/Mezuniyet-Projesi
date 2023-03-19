@@ -1,0 +1,17 @@
+=========== YAPILANLAR ===========
+
+
+------ 1. HAFTA ------
+
+• Anasayfa 
+• Toplu Blog Sayfası 
+• Blog Önizleme Sayfası 
+• Gece Modu Özelliği
+• Kullanıcı Giriş ve Kayıt Formu
+• Blog Tasarımları
+• Kategorilere Özel Sayfa Tasarımı
+
+NOT: PHP kodları henüz yazılmadı, yalnızca front-end tasarımı.
+
+NOT-2: Görsellerin alındığı sayfalar; Freepik, Unsplash, Pexels  Pixabay, StockSnap, Nappy, StockSnap .io, Reshot, Landing Stock, Photo Creator, Gratisography
+
