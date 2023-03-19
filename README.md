@@ -33,14 +33,16 @@ NOT-2: Görsellerin alındığı sayfalar; Freepik, Unsplash, Pexels  Pixabay, S
 (Koyu Tema)
 ![Koyu Tema](https://github.com/efesipahi6/Mezuniyet-Projesi/blob/main/Projeden%20kareler/karanl%C4%B1k%20mod.png)
 
-Toplu Blog
+(Toplu Blog)
 ![Toplu Blog](https://github.com/efesipahi6/Mezuniyet-Projesi/blob/main/Projeden%20kareler/toplu%20blog.png)
 
-Kategoriye Özel Sayfa
+(Kategoriye Özel Sayfa)
 ![Kategoriye Özel](https://github.com/efesipahi6/Mezuniyet-Projesi/blob/main/Projeden%20kareler/kategoriye%20%C3%B6zel%20sayfa.png)
 
-Post Sayfası
+(Post Sayfası)
 ![Kategoriye Özel](https://github.com/efesipahi6/Mezuniyet-Projesi/blob/main/Projeden%20kareler/post%20sayfas%C4%B1.png)
 
-Opsiyon
+(Opsiyon)
+
+
 ![Kategoriye Özel](https://github.com/efesipahi6/Mezuniyet-Projesi/blob/main/Projeden%20kareler/opsiyon.png)
