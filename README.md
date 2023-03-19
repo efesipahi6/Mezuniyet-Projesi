@@ -20,13 +20,13 @@ NOT: PHP kodları henüz yazılmadı, yalnızca front-end tasarımı.
 NOT-2: Görsellerin alındığı sayfalar; Freepik, Unsplash, Pexels  Pixabay, StockSnap, Nappy, StockSnap .io, Reshot, Landing Stock, Photo Creator, Gratisography
 
 (Açık Tema)
-![Açık Tema](https://prnt.sc/n7q6qgDOyQc9)
+![Açık Tema](https://github.com/efesipahi6/Mezuniyet-Projesi/blob/main/Projeden%20kareler/a%C3%A7%C4%B1k%20tema.png)
 
 (Koyu Tema)
-![Koyu Tema](https://prnt.sc/KRaz4R9oR4R6)
+![Koyu Tema](https://github.com/efesipahi6/Mezuniyet-Projesi/blob/main/Projeden%20kareler/koyu%20tema.png)
 
 Toplu Blog
-![Toplu Blog](https://prnt.sc/GXwhPsXjbOtP)
+![Toplu Blog](https://github.com/efesipahi6/Mezuniyet-Projesi/blob/main/Projeden%20kareler/toplu%20blog.png)
 
 Kategoriye Özel Sayfa
-![Kategoriye Özel](https://prnt.sc/qkcwK-ab1p4H)
+![Kategoriye Özel](https://github.com/efesipahi6/Mezuniyet-Projesi/blob/main/Projeden%20kareler/kategoriye%20%C3%B6zel.png)
