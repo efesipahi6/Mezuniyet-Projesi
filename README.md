@@ -29,6 +29,14 @@ NOT-2: Görsellerin alındığı sayfalar; Freepik, Unsplash, Pexels  Pixabay, S
 NOT-3: Hakkında, İletişim, Servisler sayfalarının tasarımı en sona bırakılacağı için şimdilik boş sayfa olarak yalnızca başlıkları konuldu.
 
 
+
+
+------ 2. HAFTA ------
+
+• Taşınıyor olduğumuz için bir şey yapamadım. Yeni evde bilgisayarımı kurduğumda daha tempolu bir şekilde devam edeceğim.
+
+
+
 (Açık Tema)
 ![Açık Tema](https://github.com/efesipahi6/Mezuniyet-Projesi/blob/main/Projeden%20kareler/ayd%C4%B1nl%C4%B1k%20mod.png)
 
