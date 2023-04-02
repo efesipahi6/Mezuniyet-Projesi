@@ -37,6 +37,16 @@ NOT-3: Hakkında, İletişim, Servisler sayfalarının tasarımı en sona bırak
 
 
 
+
+------ 3. HAFTA ------
+
+• Dashboard sayfası (Kullanıcıların ve adminlerin yetkileri farklı olacak)
+
+NOT: Normal kullanıcılar, kullanıcıları ve kategorileri yönetme yetkisine sahip olmayacak. Yönetim menüleri yalnızca "Admin" rolüne sahip hesaplarda gözükecek.
+
+
+
+
 (Açık Tema)
 ![Açık Tema](https://github.com/efesipahi6/Mezuniyet-Projesi/blob/main/Projeden%20kareler/ayd%C4%B1nl%C4%B1k%20mod.png)
 
@@ -56,3 +66,6 @@ NOT-3: Hakkında, İletişim, Servisler sayfalarının tasarımı en sona bırak
 
 
 ![Kategoriye Özel](https://github.com/efesipahi6/Mezuniyet-Projesi/blob/main/Projeden%20kareler/opsiyon.png)
+
+(Dashboard Sayfası)
+![Dashboard](https://github.com/efesipahi6/Mezuniyet-Projesi/blob/main/Projeden%20kareler/dashboard.png)
