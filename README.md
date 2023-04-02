@@ -40,7 +40,9 @@ NOT-3: Hakkında, İletişim, Servisler sayfalarının tasarımı en sona bırak
 
 ------ 3. HAFTA ------
 
-• Dashboard sayfası (Kullanıcıların ve adminlerin yetkileri farklı olacak)
+• Dashboard sayfası (Paylaşım Yap, Paylaşımları Yönet, Kullanıcı Ekle, Kategori Ekle, Kullanıcıları Yönet, Kategorileri Yönet)
+
+• Birkaç kod düzenlemesi örn: main.js ve style.css üzerinde.
 
 NOT: Normal kullanıcılar, kullanıcıları ve kategorileri yönetme yetkisine sahip olmayacak. Yönetim menüleri yalnızca "Admin" rolüne sahip hesaplarda gözükecek.
 
