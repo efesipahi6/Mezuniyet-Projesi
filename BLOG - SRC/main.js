@@ -9,7 +9,7 @@ window.addEventListener('scroll', () => {
 /* KOYU TEMA */
 let darkMode = localStorage.getItem('darkMode');
 const body = document.querySelector('body');
-modeText = body.querySelector(".mode-text");
+const modeText = body.querySelector(".mode-text");
 const darkModeToggler = document.getElementById('dark-mode-toggler');
 
 const enableDarkMode = () => {
@@ -19,7 +19,7 @@ const enableDarkMode = () => {
 
 const disableDarkMode = () => {
     document.body.classList.remove('dark-mode');
-    localStorage.setItem('darkMode', null);
+    localStorage.removeItem('darkMode');
 }
 
 if(darkMode === 'enable'){
@@ -48,14 +48,14 @@ const closeNavBtn = document.querySelector('#close__nav-btn');
 
 /* responsive menu açma */
 const openNav = () => {
-    navItems.style.display = 'flex';
+    navItems.classList.add('show');
     openNavBtn.style.display = 'none';
     closeNavBtn.style.display = 'inline-block';
 }
 
 /* responsive menu kapatma */
 const closeNav = () => {
-    navItems.style.display = 'none';
+    navItems.classList.remove('show');
     openNavBtn.style.display = 'inline-block';
     closeNavBtn.style.display = 'none';
 }
@@ -67,3 +67,24 @@ closeNavBtn.addEventListener('click', closeNav);
 
 
 
+/* MOBİL YÖNETİM PANELİ AÇMA VE KAPATMA */
+const sidebar = document.querySelector('aside');
+const showSidebarBtn = document.querySelector('#show__sidebar-btn');
+const hideSidebarBtn = document.querySelector('#hide__sidebar-btn');
+
+
+const showSidebar = () => {
+    sidebar.style.left = '0';
+    showSidebarBtn.style.display = 'none';
+    hideSidebarBtn.style.display = 'inline-block'
+}
+
+const hideSidebar = () => {
+    sidebar.style.left = '-100%';
+    showSidebarBtn.style.display = 'inline-block';
+    hideSidebarBtn.style.display = 'none'
+}
+
+
+showSidebarBtn.addEventListener('click', showSidebar);
+hideSidebarBtn.addEventListener('click', hideSidebar);
