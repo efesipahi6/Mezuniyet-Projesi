@@ -6,6 +6,7 @@ Ankara Universitesi Mezuniyet Projesi
 
 
 ------ 1. HAFTA ------
+
 • Anasayfa 
 • Toplu Blog Sayfası 
 • Blog Önizleme Sayfası 
@@ -21,11 +22,13 @@ NOT-3: Hakkında, İletişim, Servisler sayfalarının tasarımı en sona bırak
 
 
 ------ 2. HAFTA ------
+
 • Taşınıyor olduğumuz için bir şey yapamadım. Yeni evde bilgisayarımı kurduğumda daha tempolu bir şekilde devam edeceğim.
 
 
 
 ------ 3. HAFTA ------
+
 • Dashboard sayfası (Paylaşım Yap, Paylaşımları Yönet, Kullanıcı Ekle, Kategori Ekle, Kullanıcıları Yönet, Kategorileri Yönet)
 • Birkaç kod düzenlemesi örn: main.js ve style.css üzerinde.
 
@@ -35,6 +38,7 @@ NOT: Normal kullanıcılar, kullanıcıları ve kategorileri yönetme yetkisine 
 
 
 ------ 4. HAFTA ------
+
 • HTML sayfaları PHP'ye çevrildi.
 • Üyelik sistemi için veritabanı oluşturuldu.
 • Üyelik oluştururken yapılan validasyon işlemlerinin çoğu bitti.
