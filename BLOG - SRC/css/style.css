@@ -400,7 +400,7 @@ margin-left: 5%;
 .post {
     padding: 1rem;
     border-radius: var(--card-border-radius-5) 0;
-    box-shadow: var(--font-color) 0px 1px 4px, var(--font-color) 0px 0px 2rem 0px;
+    box-shadow: var(--font-color) 0px 1px 4px, var(--font-color) 0px 0px 1rem 0px;
 }
 
 

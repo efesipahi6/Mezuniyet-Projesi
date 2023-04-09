@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Efe Sipahi</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 </head>
@@ -23,7 +23,7 @@
             <input type="text" placeholder="Kullanıcı adı veya E-Posta">
             <input type="password" placeholder="Şifre">
             <button type="submit" class="btn kayit-btn">Giriş Yap</button>
-            <small>Henüz bir hesabın yok mu? <a href="signup.html">Kayıt Ol</a></small>
+            <small>Henüz bir hesabın yok mu? <a href="signup.php">Kayıt Ol</a></small>
         </form>
     </div>
 </section>
