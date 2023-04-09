@@ -5,6 +5,7 @@ Ankara Universitesi Mezuniyet Projesi
 =========== YAPILANLAR ===========
 
 
+
 ------ 1. HAFTA ------
 
 • Anasayfa 
@@ -30,9 +31,13 @@ NOT-3: Hakkında, İletişim, Servisler sayfalarının tasarımı en sona bırak
 
 
 
+
+
 ------ 2. HAFTA ------
 
 • Taşınıyor olduğumuz için bir şey yapamadım. Yeni evde bilgisayarımı kurduğumda daha tempolu bir şekilde devam edeceğim.
+
+
 
 
 
@@ -44,6 +49,8 @@ NOT-3: Hakkında, İletişim, Servisler sayfalarının tasarımı en sona bırak
 
 
 NOT: Normal kullanıcılar, kullanıcıları ve kategorileri yönetme yetkisine sahip olmayacak. Yönetim menüleri yalnızca "Admin" rolüne sahip hesaplarda gözükecek.
+
+
 
 
 
