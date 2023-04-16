@@ -76,6 +76,14 @@ NOT: Normal kullanıcılar, kullanıcıları ve kategorileri yönetme yetkisine 
 
 
 
+
+------ 5. HAFTA ------
+
+• Bu hafta bir şey yapamadım. Yeni eve vdsl internet bağlatacağız, internet kurulumu yapılması için türk telekom ekiplerinin etiket koyması gerekiyormuş. Ekipleri bekliyorum. (Teyzemin evindeki internetten yazıyorum.)
+
+
+
+
 (Açık Tema)
 ![Açık Tema](https://github.com/efesipahi6/Mezuniyet-Projesi/blob/main/Projeden%20kareler/ayd%C4%B1nl%C4%B1k%20mod.png)
 
