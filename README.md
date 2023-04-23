@@ -84,6 +84,14 @@ NOT: Normal kullanıcılar, kullanıcıları ve kategorileri yönetme yetkisine 
 
 
 
+
+------ 6. HAFTA ------
+
+• Bu hafta bir şey yapamadım. Eve vdsl bağlatacak olan ekip geldi ancak binadan daireye hat çekilmesi gerekiyormuş. Hattı kendim çektim kablo temin edip. Superonline'ın bize verdiği randevu tarihi 25.04.2023 Salı günü. (Teyzemin evindeki internetten yazıyorum.)
+
+
+
+
 (Açık Tema)
 ![Açık Tema](https://github.com/efesipahi6/Mezuniyet-Projesi/blob/main/Projeden%20kareler/ayd%C4%B1nl%C4%B1k%20mod.png)
 
