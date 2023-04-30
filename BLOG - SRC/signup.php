@@ -1,5 +1,14 @@
 <?php
 require 'config/constants.php';
+
+/* kayıt hatası alınırsa form bilgilerini geri al */
+$firstname = $_SESSION['signup-data']['firstname'] ?? null;
+$lastname = $_SESSION['signup-data']['lastname'] ?? null;
+$username = $_SESSION['signup-data']['username'] ?? null;
+$email = $_SESSION['signup-data']['email'] ?? null;
+$createpassword = $_SESSION['signup-data']['createpassword'] ?? null;
+$confirmpassword = $_SESSION['signup-data']['confirmpassword'] ?? null;
+unset($_SESSION['signup-data']);
 ?>
 
 <!DOCTYPE html>
@@ -20,16 +29,23 @@ require 'config/constants.php';
 <section class="form__section">
     <div class="container form__section-container">
         <h2>Kayıt Ol</h2>
-        <div class="alert__message error">
-            <p>HATA MESAJI</p>
-        </div>
+        <?php if(isset($_SESSION['signup'])) : ?>
+                    <div class="alert__message error">
+                    <p>
+                        <?= $_SESSION['signup'];
+                        unset($_SESSION['signup']);
+                        ?>
+                        
+                    </p>
+                </div>
+        <?php endif ?>
         <form action="<?= ROOT_URL ?>signup-logic.php" class="form__selection" enctype="multipart/form-data" method="POST">
-            <input type="text" name="firstname" placeholder="İsim">
-            <input type="text" name="lastname" placeholder="Soyisim">
-            <input type="text" name="username" placeholder="Kullanıcı Adı">
-            <input type="email" name="email" placeholder="E-Mail Adresi">
-            <input type="password" name="createpassword" placeholder="Şifre Oluştur">
-            <input type="password" name="confirmpassword" placeholder="Şifreyi Tekrarla">
+            <input type="text" name="firstname" value="<?= $firstname ?>" placeholder="İsim">
+            <input type="text" name="lastname" value="<?= $lastname ?>" placeholder="Soyisim">
+            <input type="text" name="username" value="<?= $username ?>" placeholder="Kullanıcı Adı">
+            <input type="email" name="email" value="<?= $email ?>" placeholder="E-Mail Adresi">
+            <input type="password" name="createpassword" value="<?= $createpassword ?>" placeholder="Şifre Oluştur">
+            <input type="password" name="confirmpassword" value="<?= $confirmpassword ?>" placeholder="Şifreyi Tekrarla">
             <div class="form__control">
                 <label for="avatar">Profil Fotoğrafı</label>
                 <input type="file" name="avatar" id="avatar">
