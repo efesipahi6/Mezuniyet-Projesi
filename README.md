@@ -92,6 +92,17 @@ NOT: Normal kullanıcılar, kullanıcıları ve kategorileri yönetme yetkisine 
 
 
 
+
+------ 7. HAFTA ------
+
+• Kayıt olma işleminin yapıldığı kod parçası tamamlandı. Kayıt olunan bilgiler artık veri tabanına gönderiliyor ve profil fotoğrafı dosyaya ekleniyor.
+
+• Kayıt işlemi başarısız olduğunda yine de bilgileri veri tabanına yazdırıp profil fotoğrafını dosyaya ekleyen bir hata alıyordum, bu artık olmuyor. Düzeldi.
+
+• Validasyon işlemlerinin tamamı bitti, sonraki hafta giriş yapma aşamasını bitireceğim.
+
+
+
 (Açık Tema)
 ![Açık Tema](https://github.com/efesipahi6/Mezuniyet-Projesi/blob/main/Projeden%20kareler/ayd%C4%B1nl%C4%B1k%20mod.png)
 
