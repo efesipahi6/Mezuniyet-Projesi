@@ -1,27 +1,36 @@
-<?php 
+<?php
 include 'partials/header.php';
-?>
 
+if (isset($_GET['id'])) {
+    $id = filter_var($_GET['id'], FILTER_SANITIZE_NUMBER_INT);
+    $query = "SELECT * FROM users WHERE id=$id";
+    $result = mysqli_query($connection, $query);
+    $user = mysqli_fetch_assoc($result);
+} else {
+    header('location: ' . ROOT_URL . 'admin/manage-users.php');
+    die();
+}
+?>
 
 
 
 <section class="form__section">
     <div class="container form__section-container">
-        <h2>Kullanıcı Düzenle</h2>
-        <form class="form__selection" enctype="multipart/form-data">
-            <input type="text" placeholder="İsim">
-            <input type="text" placeholder="Soyisim">
-            <select>
-                <option value="0">Yazar</option>
+        <h2>Kullanıcı Güncelle</h2>
+        <form action="<?= ROOT_URL ?>admin/edit-user-logic.php" method="POST">
+            <input type="hidden" value="<?= $user['id'] ?>" name="id">
+            <input type="text" value="<?= $user['firstname'] ?>" name="firstname" placeholder="İsim">
+            <input type="text" value="<?= $user['lastname'] ?>" name="lastname" placeholder="Soyisim">
+            <select name="userrole">
+                <option value="0">Kullanıcı</option>
                 <option value="1">Yönetici</option>
             </select>
-            <button type="submit" class="btn kayit-btn">Değişikliği Uygula</button>
+            <button type="submit" name="submit" class="btn">Kullanıcıyı Güncelle</button>
         </form>
     </div>
 </section>
 
 
-
-<?php 
+<?php
 include '../partials/footer.php';
 ?>

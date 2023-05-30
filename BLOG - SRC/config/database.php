@@ -1,9 +1,9 @@
 <?php
 require 'config/constants.php';
 
-/* VERİ TABANINA BAĞLANMA */
+// veritabanı bağlantısı
 $connection = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
-if(mysqli_errno($connection)) {
+if (mysqli_errno($connection)) {
     die(mysqli_error($connection));
 }

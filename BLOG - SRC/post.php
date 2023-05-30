@@ -1,45 +1,56 @@
-<?php 
+<?php
 include 'partials/header.php';
+
+// id ayarlanmışsa veritabanından gönderiyi getir
+if (isset($_GET['id'])) {
+    $id = filter_var($_GET['id'], FILTER_SANITIZE_NUMBER_INT);
+    $query = "SELECT * FROM posts WHERE id=$id";
+    $result = mysqli_query($connection, $query);
+    $post = mysqli_fetch_assoc($result);
+} else {
+    header('location: ' . ROOT_URL . 'blog.php');
+    die();
+}
 ?>
 
 
-    <!-- POST SAYFASI BAŞLANGIÇ -->
-    <section class="singlepost">
-        <div class="container singlepost__container">
-            <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, laborum?</h2>
-            <div class="post__author">
-                <div class="post__author-avatar">
-                    <img src="./images/avatar2.jpg">
-                </div>
-                <div class="post__author-info">
-                    <h5>Paylaşan: Kullanıcı ismi</h5>
-                    <small>Tarih: 18 Mart 2023 - 21.15</small>
-                </div>
+
+<section class="singlepost">
+    <div class="container singlepost__container">
+        <h2><?= $post['title'] ?></h2>
+        <div class="post__author">
+            <?php
+            // author_id kullanarak kullanıcılar tablosundan yazarı getir
+            $author_id = $post['author_id'];
+            $author_query = "SELECT * FROM users WHERE id=$author_id";
+            $author_result = mysqli_query($connection, $author_query);
+            $author = mysqli_fetch_assoc($author_result);
+
+            ?>
+            <div class="post__author-avatar">
+                <img src="./images/<?= $author['avatar'] ?>">
             </div>
-            <div class="singlepost__thumbnail">
-                <img src="./images/blog33.jpg">
+            <div class="post__author-info">
+                <h5>Yazar: <?= "{$author['firstname']} {$author['lastname']}" ?></h5>
+                <small>
+                    <?= date("M d, Y - H:i", strtotime($post['date_time'])) ?>
+                </small>
             </div>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem neque sapiente fugit quos vel accusantium assumenda rerum libero qui quisquam delectus ullam, porro ducimus, praesentium ipsum repellat exercitationem soluta aliquam ratione velit eligendi? Saepe accusamus, maxime quas officiis voluptates nulla.
-            </p>
-            <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque voluptates dolore ipsa mollitia tenetur molestias, in doloribus quos voluptatibus saepe!
-            </p>
-            <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et impedit distinctio earum perferendis adipisci hic eius cum quasi obcaecati velit corrupti reiciendis in, officia ipsum officiis id suscipit est laboriosam.
-            </p>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, quis natus itaque rem aperiam explicabo modi amet eum corporis sapiente, sed unde ut tempora quas illum ipsum qui quam? Soluta error est cum, cumque recusandae laudantium harum asperiores repudiandae minus sit suscipit excepturi voluptates deleniti debitis quae voluptatibus repellat nihil, perferendis assumenda aut praesentium, temporibus exercitationem? Reprehenderit quisquam blanditiis aliquam?
-            </p>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem neque sapiente fugit quos vel accusantium assumenda rerum libero qui quisquam delectus ullam, porro ducimus, praesentium ipsum repellat exercitationem soluta aliquam ratione velit eligendi? Saepe accusamus, maxime quas officiis voluptates nulla.
-            </p>
         </div>
-    </section>
-    <!-- POST SAYFASI BİTİŞ -->
+        <div class="singlepost__thumbnail">
+            <img src="./images/<?= $post['thumbnail'] ?>">
+        </div>
+        <p>
+            <?= $post['body'] ?>
+        </p>
+    </div>
+</section>
 
 
 
-<?php 
+
+
+<?php
 include 'partials/footer.php';
+
 ?>

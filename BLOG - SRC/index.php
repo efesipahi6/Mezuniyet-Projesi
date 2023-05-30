@@ -1,217 +1,133 @@
 <?php
 include 'partials/header.php';
+
+// önerilenleri veritabanından çekme
+$featured_query = "SELECT * FROM posts WHERE is_featured=1";
+$featured_result = mysqli_query($connection, $featured_query);
+$featured = mysqli_fetch_assoc($featured_result);
+
+// tablodan 9 post alma
+$query = "SELECT * FROM posts ORDER BY date_time DESC LIMIT 9";
+$posts = mysqli_query($connection, $query);
 ?>
 
 
-
     <!-- ÖNE ÇIKANLAR BAŞLANGIÇ -->
+    <?php if (mysqli_num_rows($featured_result) == 1) : ?>
     <section class="featured">
         <div class="container featured__container">
             <div class="post__thumbnail">
-                <img src="./images/blog1.jpg">
+                <img src="./images/<?= $featured['thumbnail'] ?>">
             </div>
             <div class="post__info">
-                <a href="category-posts.html" class="category__button">Vahşi Yaşam</a>
-                <h2 class="post__title"><a href="post.html">Lorem ipsum dolor sit amet consectetur adipisicing elit.</a></h2>
-                <p class="post__body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid velit facere odio laboriosam est fugiat repellendus atque eius porro culpa.</p>
+                <?php
+                $category_id = $featured['category_id'];
+                $category_query = "SELECT * FROM categories WHERE id=$category_id";
+                $category_result = mysqli_query($connection, $category_query);
+                $category = mysqli_fetch_assoc($category_result);
+                ?>
+                <a href="<?= ROOT_URL ?>category-posts.php?id=<?= $featured['category_id'] ?>" class="category__button"><?= $category['title'] ?></a>
+                <h2 class="post__title"><a href="<?= ROOT_URL ?>post.php?id=<?= $featured['id'] ?>"><?= $featured['title'] ?></a></h2>
+                <p class="post__body">
+                    <?= substr($featured['body'], 0, 300) ?>...
+                </p>
                 <div class="post__author">
+                    <?php
+                    $author_id = $featured['author_id'];
+                    $author_query = "SELECT * FROM users WHERE id=$author_id";
+                    $author_result = mysqli_query($connection, $author_query);
+                    $author = mysqli_fetch_assoc($author_result);
+
+                    ?>
                     <div class="post__author-avatar">
-                        <img src="./images/avatar2.jpg">
+                        <img src="./images/<?= $author['avatar'] ?>">
                     </div>
                     <div class="post__author-info">
-                        <h5>Paylaşan: Kullanıcı ismi</h5>
-                        <small>Tarih: 18 Mart 2023 - 21.15</small>
+                        <h5>Yazar: <?= "{$author['firstname']} {$author['lastname']}" ?></h5>
+                        <small>
+                            <?= date("M d, Y - H:i", strtotime($featured['date_time'])) ?>
+                        </small>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+<?php endif ?>
     <!-- ÖNE ÇIKANLAR BİTİŞ -->
 
 
 
 
-
     <!-- POSTLAR BAŞLANGIÇ -->
-    <section class="posts">
-        <div class="container posts__container">
+<section class="posts <?= $featured ? '' : 'section__extra-margin' ?>">
+    <div class="container posts__container">
+        <?php while ($post = mysqli_fetch_assoc($posts)) : ?>
             <article class="post">
                 <div class="post__thumbnail">
-                    <img src="./images/blog2.jpg">
+                    <img src="./images/<?= $post['thumbnail'] ?>">
                 </div>
                 <div class="post__info">
-                    <a href="category-posts.html" class="category__button">Vahşi Yaşam</a>
-                    <h3 class="post__title"><a href="post.html">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, molestiae!</a></h3>
+                    <?php
+                    /* yazının Category_id'sini kullanarak kategoriler tablosundan kategoriyi getirme */
+                    $category_id = $post['category_id'];
+                    $category_query = "SELECT * FROM categories WHERE id=$category_id";
+                    $category_result = mysqli_query($connection, $category_query);
+                    $category = mysqli_fetch_assoc($category_result);
+                    ?>
+                    <a href="<?= ROOT_URL ?>category-posts.php?id=<?= $post['category_id'] ?>" class="category__button"><?= $category['title'] ?></a>
+                    <h3 class="post__title">
+                        <a href="<?= ROOT_URL ?>post.php?id=<?= $post['id'] ?>"><?= $post['title'] ?></a>
+                    </h3>
                     <p class="post__body">
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi, praesentium nemo dolore impedit dolor veniam accusantium eveniet hic nesciunt nostrum?
+                        <?= substr($post['body'], 0, 150) ?>...
                     </p>
                     <div class="post__author">
-                        <div class="post__author-avatar">
-                            <img src="./images/avatar3.jpg">
-                        </div>
-                        <div class="post__author-info">
-                            <h5>Paylaşan: Kullanıcı ismi</h5>
-                            <small>Tarih: 20 Mart 2023 - 18.34</small>
-                        </div>
-                    </div>
-                </div>
-            </article>
+                        <?php
+                        /* Author_id kullanarak kullanıcılar tablosundan yazarları getirme */
+                        $author_id = $post['author_id'];
+                        $author_query = "SELECT * FROM users WHERE id=$author_id";
+                        $author_result = mysqli_query($connection, $author_query);
+                        $author = mysqli_fetch_assoc($author_result);
 
-            <article class="post">
-                <div class="post__thumbnail">
-                    <img src="./images/blog3.jpg">
-                </div>
-                <div class="post__info">
-                    <a href="category-posts.html" class="category__button">Vahşi Yaşam</a>
-                    <h3 class="post__title"><a href="post.html">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, molestiae!</a></h3>
-                    <p class="post__body">
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi, praesentium nemo dolore impedit dolor veniam accusantium eveniet hic nesciunt nostrum?
-                    </p>
-                    <div class="post__author">
+                        ?>
                         <div class="post__author-avatar">
-                            <img src="./images/avatar4.jpg">
+                            <img src="./images/<?= $author['avatar'] ?>">
                         </div>
                         <div class="post__author-info">
-                            <h5>Paylaşan: Kullanıcı ismi</h5>
-                            <small>Tarih: 20 Mart 2023 - 18.34</small>
+                            <h5>Yazar: <?= "{$author['firstname']} {$author['lastname']}" ?></h5>
+                            <small>
+                                <?= date("M d, Y - H:i", strtotime($post['date_time'])) ?>
+                            </small>
                         </div>
                     </div>
                 </div>
             </article>
-
-            <article class="post">
-                <div class="post__thumbnail">
-                    <img src="./images/blog4.jpg">
-                </div>
-                <div class="post__info">
-                    <a href="category-posts.html" class="category__button">Vahşi Yaşam</a>
-                    <h3 class="post__title"><a href="post.html">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, molestiae!</a></h3>
-                    <p class="post__body">
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi, praesentium nemo dolore impedit dolor veniam accusantium eveniet hic nesciunt nostrum?
-                    </p>
-                    <div class="post__author">
-                        <div class="post__author-avatar">
-                            <img src="./images/avatar5.jpg">
-                        </div>
-                        <div class="post__author-info">
-                            <h5>Paylaşan: Kullanıcı ismi</h5>
-                            <small>Tarih: 20 Mart 2023 - 18.34</small>
-                        </div>
-                    </div>
-                </div>
-            </article>
-
-            <article class="post">
-                <div class="post__thumbnail">
-                    <img src="./images/blog5.jpg">
-                </div>
-                <div class="post__info">
-                    <a href="category-posts.html" class="category__button">Vahşi Yaşam</a>
-                    <h3 class="post__title"><a href="post.html">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, molestiae!</a></h3>
-                    <p class="post__body">
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi, praesentium nemo dolore impedit dolor veniam accusantium eveniet hic nesciunt nostrum?
-                    </p>
-                    <div class="post__author">
-                        <div class="post__author-avatar">
-                            <img src="./images/avatar6.jpg">
-                        </div>
-                        <div class="post__author-info">
-                            <h5>Paylaşan: Kullanıcı ismi</h5>
-                            <small>Tarih: 20 Mart 2023 - 18.34</small>
-                        </div>
-                    </div>
-                </div>
-            </article>
-
-            <article class="post">
-                <div class="post__thumbnail">
-                    <img src="./images/blog7.jpg">
-                </div>
-                <div class="post__info">
-                    <a href="category-posts.html" class="category__button">Vahşi Yaşam</a>
-                    <h3 class="post__title"><a href="post.html">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, molestiae!</a></h3>
-                    <p class="post__body">
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi, praesentium nemo dolore impedit dolor veniam accusantium eveniet hic nesciunt nostrum?
-                    </p>
-                    <div class="post__author">
-                        <div class="post__author-avatar">
-                            <img src="./images/avatar8.jpg">
-                        </div>
-                        <div class="post__author-info">
-                            <h5>Paylaşan: Kullanıcı ismi</h5>
-                            <small>Tarih: 20 Mart 2023 - 18.34</small>
-                        </div>
-                    </div>
-                </div>
-            </article>
-
-            <article class="post">
-                <div class="post__thumbnail">
-                    <img src="./images/blog8.jpg">
-                </div>
-                <div class="post__info">
-                    <a href="category-posts.html" class="category__button">Vahşi Yaşam</a>
-                    <h3 class="post__title"><a href="post.html">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, molestiae!</a></h3>
-                    <p class="post__body">
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi, praesentium nemo dolore impedit dolor veniam accusantium eveniet hic nesciunt nostrum?
-                    </p>
-                    <div class="post__author">
-                        <div class="post__author-avatar">
-                            <img src="./images/avatar9.jpg">
-                        </div>
-                        <div class="post__author-info">
-                            <h5>Paylaşan: Kullanıcı ismi</h5>
-                            <small>Tarih: 20 Mart 2023 - 18.34</small>
-                        </div>
-                    </div>
-                </div>
-            </article>
-
-            <article class="post">
-                <div class="post__thumbnail">
-                    <img src="./images/blog9.jpg">
-                </div>
-                <div class="post__info">
-                    <a href="category-posts.html" class="category__button">Vahşi Yaşam</a>
-                    <h3 class="post__title"><a href="post.html">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, molestiae!</a></h3>
-                    <p class="post__body">
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi, praesentium nemo dolore impedit dolor veniam accusantium eveniet hic nesciunt nostrum?
-                    </p>
-                    <div class="post__author">
-                        <div class="post__author-avatar">
-                            <img src="./images/avatar10.jpg">
-                        </div>
-                        <div class="post__author-info">
-                            <h5>Paylaşan: Kullanıcı ismi</h5>
-                            <small>Tarih: 20 Mart 2023 - 18.34</small>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        </div>
-    </section>
+        <?php endwhile ?>
+    </div>
+</section>
     <!-- POSTLAR BİTİŞ -->
 
 
 
-
-
     <!-- KATEGORİLER BAŞLANGIÇ -->
-    <section class="category__buttons">
-        <div class="container category__buttons-container">
-            <a href="category-posts.html" class="category__button">Sanat</a>
-            <a href="category-posts.html" class="category__button">Vahşi Yaşam</a>
-            <a href="category-posts.html" class="category__button">Seyahat</a>
-            <a href="category-posts.html" class="category__button">Bilim & Teknoloji</a>
-            <a href="category-posts.html" class="category__button">Yemek</a>
-            <a href="category-posts.html" class="category__button">Müzik</a>
-        </div>
-    </section>
+<section class="category__buttons">
+    <div class="container category__buttons-container">
+        <?php
+        $all_categories_query = "SELECT * FROM categories";
+        $all_categories = mysqli_query($connection, $all_categories_query);
+        ?>
+        <?php while ($category = mysqli_fetch_assoc($all_categories)) : ?>
+            <a href="<?= ROOT_URL ?>category-posts.php?id=<?= $category['id'] ?>" class="category__button"><?= $category['title'] ?></a>
+        <?php endwhile ?>
+    </div>
+</section>
     <!-- KATEGORİLER BİTİŞ -->
 
 
 
 
- <?php 
- include 'partials/footer.php';
- ?>
+<?php
+
+include 'partials/footer.php';
+
+?>

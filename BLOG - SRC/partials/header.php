@@ -1,5 +1,13 @@
 <?php
 require 'config/database.php';
+
+/* Giriş yapılan kullanıcı hesabının bilgilerini getirme */
+if(isset($_SESSION['user-id'])) {
+    $id = filter_var($_SESSION['user-id'], FILTER_SANITIZE_NUMBER_INT);
+    $query = "SELECT avatar FROM users WHERE id=$id";
+    $result = mysqli_query($connection, $query);
+    $avatar = mysqli_fetch_assoc($result);
+}
 ?>
 
 
@@ -14,12 +22,12 @@ require 'config/database.php';
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="<?= ROOT_URL ?>css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
 </head>
 <body>
     
 <!-- NAVBAR BAŞLANGIÇ -->
-    <nav>
+<nav>
         <div class="container nav__container">
             <a href="<?= ROOT_URL ?>index.php" class="nav__logo">Efe Sipahi</a>
             <ul class="nav__items">
@@ -27,15 +35,7 @@ require 'config/database.php';
                 <li><a href="<?= ROOT_URL ?>about.php">Hakkında</a></li>
                 <li><a href="<?= ROOT_URL ?>services.php">Servisler</a></li>
                 <li><a href="<?= ROOT_URL ?>contact.php">İletişim</a></li>
-                <li><a href="<?= ROOT_URL ?>signin.php">Kayıt Ol</a></li>
-                <li class="nav__profile">
-                    <div class="avatar">
-                        <img src="./images/avatar1.jpg" alt="">
-                    </div>
-                    <ul>
-                        <li><a href="<?= ROOT_URL ?>admin/index.php">Kontrol Paneli</a></li>
-                        <li><a href="<?= ROOT_URL ?>logout.php">Çıkış Yap<i class="uil uil-signout"></i></a></li>
-                        <li class="mode">
+                <li class="mode">
                             
                             <div class="toggler-wrap">
                             <input type="checkbox" class="checkbox" id="dark-mode-toggler">
@@ -50,8 +50,20 @@ require 'config/database.php';
                             </div>
                             
                         </li>
+                <?php if (isset($_SESSION['user-id'])) : ?>
+                    <li class="nav__profile">
+                    <div class="avatar">
+                        <img src="<?= ROOT_URL . 'images/' . $avatar['avatar'] ?>" alt="">
+                    </div>
+                    <ul>
+                        <li><a href="<?= ROOT_URL ?>admin/index.php">Kontrol Paneli</a></li>
+                        <li><a href="<?= ROOT_URL ?>logout.php">Çıkış Yap<i class="uil uil-signout"></i></a></li>
+                        
                     </ul>
                 </li>
+                <?php else : ?>
+                <li><a href="<?= ROOT_URL ?>signin.php">Giriş Yap</a></li>
+                <?php endif ?>
             </ul>
             <button id="open__nav-btn"><i class="uil uil-bars"></i></button>
             <button id="close__nav-btn"><i class="uil uil-multiply"></i></button>
