@@ -1,4 +1,5 @@
 /* GENEL CSS BAŞLANGIÇ */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 
 :root {
     --color-primary: #6c63ff;
@@ -171,7 +172,7 @@ small {
 }
 
 .toggler-wrap .label{
-    background: var(--background);
+    background:var(--secondbg);
     width: 50px;
     height: 24px;
     border-radius: 12px;
@@ -201,7 +202,7 @@ small {
 }
 
 .toggler-wrap i{
-    color: var(--secondbg);
+    color: var(--font-color);
 }
 
 /* GENEL CSS BİTİŞ */
@@ -817,6 +818,182 @@ input, textarea, select {
     cursor: default;
     transition: var(--transition);
 }
+
+
+
+
+/* İLETİŞİM SAYFASI */
+
+/* .con-wrapper {
+    width: 720px;
+    background: #161616;
+    box-shadow: var(--font-color) 0px 1px 4px, var(--font-color) 0px 0px 2rem 0px;
+    border-radius: var(--card-border-radius-4) 0;
+}
+
+.con-wrapper header {
+    font-size: 1.4rem;
+    font-weight: 600;
+    padding: 1.3rem 1.9rem;
+    border-bottom: 1px solid #fff;
+    color: #fff;
+}
+
+.con-wrapper form {
+    margin: 2.2rem 1.9rem;
+}
+
+.con-wrapper form .dbl-field {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.6rem;
+    justify-content: space-between;
+}
+
+.dbl-field .field {
+    height: 50px;
+    position: relative;
+    width: calc(100% / 2 -13px);
+}
+
+form .field input,
+form .message textarea {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    padding: 0 1.2rem 0 3rem;
+    font-size: 1rem;
+    border: 1px solid #fff;
+    border-radius: 5px;
+}
+
+form .field input::placeholder,
+form .message textarea::placeholder {
+    color: #fff;
+}
+
+.con-wrapper form i {
+    position: absolute;
+    left: 1.1rem;
+    top: 50%;
+    font-size: 1rem;
+    pointer-events: none;
+    transform: translateY(-50%);
+    color: #fff;
+} */
+
+.contact .contact-bottom {
+    margin: 30px 0;
+  }
+  
+  .contact-bottom .contact-titles {
+    width: 100%;
+    text-align: center;
+
+  }
+  
+  .contact-bottom .contact-titles h4 {
+    color: #e51414;
+    font-weight: 500;
+  }
+  
+  .contact-bottom .contact-titles h2 {
+    font-size: 40px;
+    font-weight: 600;
+  }
+  
+  .contact-bottom .contact-titles p {
+    font-size: 14px;
+  }
+  
+  .contact-bottom .contact-elements {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 50px;
+    gap: 100px;
+    background: #161616;
+    padding: 2rem 2rem;
+    border: 1px solid var(--font-color);
+    box-shadow: var(--font-color) 0px 1px 4px, var(--font-color) 0px 0px 2rem 0px;
+    border-radius: var(--card-border-radius-4) 0;
+  }
+  
+  .contact-bottom .contact-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    color: #fff;
+  }
+  
+  .contact-bottom .contact-form > div {
+    display: flex;
+    flex-direction: column;
+    flex-basis: calc(50% - 10px);
+    font-size: 14px;
+    row-gap: 4px;
+  }
+  
+  .contact-bottom .contact-form > div label span {
+    color: #e51414;
+  }
+  
+  .contact-bottom .contact-form > div:nth-child(3),
+  .contact-bottom .contact-form > div:nth-child(4) {
+    flex-basis: 100%;
+  }
+  
+  .contact-bottom .contact-form .form-button {
+    background-color: black;
+    color: #fff;
+  }
+  
+  
+  .contact-elements .contact-info {
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+  }
+  
+  .contact-info-item {
+    font-size: 14px;
+  }
+  
+  .contact-info-item .contact-info-texts {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .contact-info-item .contact-street {
+    margin: 15px 0;
+  }
+  
+  .contact-info-item .contact-date {
+    margin-top: 10px;
+  }
+
+  .button-area span {
+    display: none;
+  }
+  
+  /* responsive */
+  @media (max-width: 768px) {
+    .contact .contact-titles {
+      width: 100%;
+    }
+  
+    .contact-elements {
+      flex-direction: column;
+      gap: 50px !important;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .contact-form {
+      flex-direction: column;
+    }
+  }
 
 
 /* =================================== RESPONSİVE =================================== */
