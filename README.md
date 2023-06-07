@@ -103,6 +103,21 @@ NOT: Normal kullanıcılar, kullanıcıları ve kategorileri yönetme yetkisine 
 
 
 
+
+------ SON GÜNCELLEME ------
+
+• Uzun bir süre evde olamadığımdan projeyi farklı bir bilgisayardan yürüttüm fakat github hesabımın şifresi ve kayıtlı olduğum mail adresi kendi bilgisayarımda kayıtlı olduğundan yükleme yapamadım.
+
+• Kayıt, Giriş işlemleri bitti.
+
+• Veri tabanı işlemleri tamamen bitti.
+
+• İletişim ve servisler sayfası yapılacak.
+
+• Proje başında belirttiğim üyeler arası sohbet yetişmeyecek.
+
+
+
 (Açık Tema)
 ![Açık Tema](https://github.com/efesipahi6/Mezuniyet-Projesi/blob/main/Projeden%20kareler/ayd%C4%B1nl%C4%B1k%20mod.png)
 
