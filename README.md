@@ -118,6 +118,18 @@ NOT: Normal kullanıcılar, kullanıcıları ve kategorileri yönetme yetkisine 
 
 
 
+
+
+------ SON ------
+
+• Projede sona ulaştım.
+
+• Kayıt olma, paylaşım yapma, yönetme işlemleri sorunsuz yapılıyor.
+
+• Tüm sayfaların tasarımı ve işlevleri bitti.
+
+
+
 (Açık Tema)
 ![Açık Tema](https://github.com/efesipahi6/Mezuniyet-Projesi/blob/main/Projeden%20kareler/ayd%C4%B1nl%C4%B1k%20mod.png)
 
